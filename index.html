@@ -235,7 +235,50 @@
       display: inline-block; width: 70px;
     }
   }
-</style>
+</style>.how-it-works {
+    max-width: 720px; margin: 0 auto;
+    padding: 30px 20px 10px;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .step { text-align: left; }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--amber); font-size: 13px; font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .step-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 14.5px;
+    color: var(--paper); margin-bottom: 4px;
+  }
+  .step-text {
+    font-size: 12.5px; color: var(--muted); line-height: 1.5;
+  }
+  .trust-bar {
+    max-width: 720px; margin: 8px auto 0;
+    padding: 16px 20px;
+    display: flex; justify-content: center; gap: 36px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .trust-item {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+  }
+  .trust-num {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--amber); font-weight: 700; font-size: 16px;
+  }
+  .trust-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; color: var(--muted); letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+  @media (max-width: 560px) {
+    .how-it-works { grid-template-columns: 1fr; gap: 22px; }
+    .trust-bar { gap: 20px; flex-wrap: wrap; }
+  }
 </head>
 <body>
 
