@@ -27,7 +27,6 @@
   }
   ::selection { background: var(--amber); color: var(--ink); }
 
-  /* Top bar */
   .topbar {
     display: flex; align-items: center; justify-content: space-between;
     padding: 14px 20px;
@@ -52,7 +51,6 @@
   }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 
-  /* Ticker */
   .ticker-wrap {
     border-bottom: 1px solid var(--line);
     background: var(--panel);
@@ -74,7 +72,6 @@
     to { transform: translateX(-50%); }
   }
 
-  /* Hero */
   .hero {
     max-width: 720px; margin: 0 auto;
     padding: 56px 20px 28px;
@@ -94,9 +91,7 @@
     margin: 0 0 14px;
     color: var(--paper);
   }
-  h1 em {
-    font-style: normal; color: var(--amber);
-  }
+  h1 em { font-style: normal; color: var(--amber); }
   .sub {
     color: var(--muted);
     font-size: 15px;
@@ -104,7 +99,51 @@
     line-height: 1.5;
   }
 
-  /* Terminal search */
+  .how-it-works {
+    max-width: 720px; margin: 0 auto;
+    padding: 30px 20px 10px;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .step { text-align: left; }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--amber); font-size: 13px; font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .step-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 14.5px;
+    color: var(--paper); margin-bottom: 4px;
+  }
+  .step-text {
+    font-size: 12.5px; color: var(--muted); line-height: 1.5;
+  }
+  .trust-bar {
+    max-width: 720px; margin: 8px auto 0;
+    padding: 16px 20px;
+    display: flex; justify-content: center; gap: 36px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .trust-item {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+  }
+  .trust-num {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--amber); font-weight: 700; font-size: 16px;
+  }
+  .trust-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; color: var(--muted); letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+  @media (max-width: 560px) {
+    .how-it-works { grid-template-columns: 1fr; gap: 22px; }
+    .trust-bar { gap: 20px; flex-wrap: wrap; }
+  }
+
   .terminal {
     max-width: 640px; margin: 28px auto 0;
     padding: 0 20px;
@@ -164,7 +203,6 @@
   .blink { animation: blink 1s steps(2) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
 
-  /* Results ledger */
   .ledger-wrap { max-width: 720px; margin: 10px auto 60px; padding: 0 20px; }
   .ledger-head {
     display: grid;
@@ -221,6 +259,7 @@
     border-top: 1px solid var(--line);
     line-height: 1.6;
   }
+  footer a { display: inline-block; margin-top: 14px; }
 
   @media (max-width: 480px) {
     .ledger-head { display: none; }
@@ -234,50 +273,8 @@
       color: var(--muted); font-size: 10px;
       display: inline-block; width: 70px;
     }
-  }.how-it-works {
-    max-width: 720px; margin: 0 auto;
-    padding: 30px 20px 10px;
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
   }
-  .step { text-align: left; }
-  .step-num {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--amber); font-size: 13px; font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .step-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: 14.5px;
-    color: var(--paper); margin-bottom: 4px;
-  }
-  .step-text {
-    font-size: 12.5px; color: var(--muted); line-height: 1.5;
-  }
-  .trust-bar {
-    max-width: 720px; margin: 8px auto 0;
-    padding: 16px 20px;
-    display: flex; justify-content: center; gap: 36px;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .trust-item {
-    display: flex; flex-direction: column; align-items: center;
-    text-align: center;
-  }
-  .trust-num {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--amber); font-weight: 700; font-size: 16px;
-  }
-  .trust-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px; color: var(--muted); letter-spacing: 0.5px;
-    margin-top: 2px;
-  }
-  @media (max-width: 560px) {
-    .how-it-works { grid-template-columns: 1fr; gap: 22px; }
-    .trust-bar { gap: 20px; flex-wrap: wrap; }
-  }</style>
+</style>
 </head>
 <body>
 
@@ -309,7 +306,9 @@
     <div class="eyebrow">DOMAIN DISCOVERY TERMINAL</div>
     <h1>Find domains <em>the market</em><br>hasn't priced yet.</h1>
     <p class="sub">Type a keyword. We scan live registries and score every result for brandability — in seconds.</p>
-  </div><div class="how-it-works">
+  </div>
+
+  <div class="how-it-works">
     <div class="step">
       <div class="step-num">01</div>
       <div class="step-title">Type a keyword</div>
@@ -364,9 +363,10 @@
 
   <footer>
     SCORES AND VALUES ARE ALGORITHMIC ESTIMATES, NOT APPRAISALS.<br>
-    AVAILABILITY CHECKED LIVE VIA RDAP REGISTRY DATA.
+    AVAILABILITY CHECKED LIVE VIA RDAP REGISTRY DATA.<br>
+    <a href="/guide.html" style="color:#FFB000;text-decoration:none;">READ: HOW TO FIND A BRANDABLE DOMAIN NAME →</a>
   </footer>
-<a href="/guide.html" style="color:#FFB000;text-decoration:none;">READ: HOW TO FIND A BRANDABLE DOMAIN NAME →</a>
+
 <script>
   const API = "https://domainflare-backend-you.onrender.com";
   const input = document.getElementById("keyword");
@@ -407,4 +407,4 @@
   input.addEventListener("keydown", e => { if (e.key === "Enter") generate(); });
 </script>
 </body>
-      </html>
+</html>
